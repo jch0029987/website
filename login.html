@@ -1,31 +1,73 @@
-<body>
-<form name="login" class="form">
-        <p class="title">Client Dashboard</p>
-        <p class="login-description">This dashboard allows you to manage your project and files</p>
-        <input type="text" name="userid" placeholder="Username" class="text-field"/>
-        <input type="password" name="pswrd" placeholder="Password" class="text-field"/>
-        <input type="submit" class="button" onclick="check(this.form)" value="Login"/>
-</form>
-</body>
+<html>
+        <body>
+	
+	<center>
+	
 
-  <script>
-         var users = [{
-  username: 'admin',
-  password: 'abc123'
-},{
-  username: 'user1',
-  password: '321cba'
-}];
+	
+<br />
 
-var index = users.indexof(function (user) {
-  return users.username === user.username &&
-  users.password === user.password;
-})
 
-if (index !== -1) {
-  window.open('dashboard.html')/*opens the target page while Id & password matches*/
-}
-else {
-  alert("Error Password or Username"
-)/*displays error message*/
-</script>
+<table border="1">
+<tr>
+<td colspan="2">
+<center>
+<h1><b>Login Area</b></h1>
+</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<h1><b>Username</b></h1>
+</td>
+<td><form name="login">
+<input name="user1" type="text"></td>
+</tr>
+
+<tr>
+<td><h1><b>Password</b></h1></td>
+<td><input name="pass1" type="password"></td>
+</tr>
+
+<tr>
+<td>
+<center>
+<input type="button" value="Login" onClick="userLogin(user1,pass1)">
+</center>
+</td>
+
+<td>
+<center><br>
+
+</td>
+</tr>
+</table>
+</center>
+	
+	
+	</body>
+	</html>
+<script type="text/javascript">
+
+
+
+function userLogin(user1,pass1)
+{
+	var userName = user1.value;
+	var userPass = pass1.value;
+	var correct = 0;	// set variable of correct so that if its turned ON ( True ) it runs the statement bellow.
+	var wrong = 1; // set variable of Wrong so that if wrong is switched false then it alerts the user.
+
+	var i = 0
+	var userarray = ["User1", "User2", "User3", "User4", "User5"]; // set usernames and passwords in the array.
+	var passarray = ["Pass1", "Pass2", "Pass3", "Pass4", "Pass5"];
+
+
+	for (var i=0; i < userarray.length; i++)
+		{
+			if (( userName == userarray[i]) && ( userPass == passarray[i])) // if variables userName and userPass are equals to the array then correct = true.
+				{
+					correct = 1;
+				}
+		}	
